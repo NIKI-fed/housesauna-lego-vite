@@ -1,0 +1,19 @@
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: $base-overlay;
+  z-index: 50;
+  display: none;
+  overflow: auto;
+  overflow-x: scroll;
+}
+
+.overlay::-webkit-scrollbar:horizontal {
+  height: 11px;
+  appearance: slider-horizontal;
+}
+
+.overlay--visible {
+  display: flex;
+}

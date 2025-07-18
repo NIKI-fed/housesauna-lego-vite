@@ -1,0 +1,116 @@
+.mainNav {
+  display: none;
+  // display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 75px);
+  padding-block-end: 120px;
+  width: 210px;
+  background-color: $base-black;
+
+  @media (min-width: $width-tablet-album) {
+    display: flex;
+    flex-direction: row;
+    min-height: 80px;
+    width: 100%;
+    max-width: $width-tablet-album-container;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    padding-block-end: 0;
+  }
+
+  @media (min-width: $width-desktop) {
+    max-width: $width-desktop-container;
+  }
+}
+
+.mainNav--open {
+  display: flex;
+}
+
+.mainNav__list {
+  list-style: none;
+  padding-inline-start: $padding-mobile;
+  margin-block-end: auto;
+
+  @media (min-width: $width-tablet-album) {
+    display: flex;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-end: auto;
+  }
+
+  @media (min-width: $width-desktop) {
+    max-width: calc(50% + 75px);
+    width: 100%;
+  }
+}
+
+.mainNav__listSub {
+  position: absolute;
+  list-style: none;
+  padding-inline-start: 0;
+  background-color: $base-black-alpha-9;
+  display: none;
+
+  @media (min-width: $width-tablet-album) {
+    top: 100%;
+  }
+}
+
+.mainNav__listSub--visible {
+  display: block;
+}
+
+.mainNav__link {
+  color: $base-white;
+  text-decoration: none;
+  font-weight: 400;
+  padding-block-end: 5px;
+  padding-block-start: 5px;
+  display: block;
+  cursor: pointer;
+
+  @media (min-width: $width-tablet-album) {
+    font-size: $sm-text-mobile-font;
+    line-height: $sm-text-mobile-line;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-inline-end: 7px;
+    padding-inline-start: 7px;
+  }
+}
+
+.mainNav__link:hover,
+.mainNav__link:focus {
+  color: $base-white-alpha;
+}
+
+.mainNav__link--sub {
+  padding-inline: 12px;
+
+  @media (min-width: $width-tablet-album) {
+    padding-block: 10px;
+    padding-inline: 20px;
+  }
+}
+
+.mainNav__link--sub:hover,
+.mainNav__link--sub:focus {
+  color: $base-white;
+  background-color: $base-white-alpha-33;
+}
+
+.mainNav__item--logo {
+  display: none;
+
+  @media (min-width: $width-tablet-album) {
+    display: block;
+  }
+
+  @media (min-width: $width-desktop) {
+    margin-inline-start: auto;
+  }
+}

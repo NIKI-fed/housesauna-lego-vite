@@ -1,0 +1,179 @@
+@import "variables.scss";
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: $text-mobile-font;
+  line-height: $text-mobile-line;
+  color: $base-dark;
+  font-weight: 300;
+  background-color: $base-white;
+  background: linear-gradient(to bottom, #111, #111 80px, #fff 80px, #fff);
+  width: 100%;
+  height: 100%;
+  min-width: $width-mobile;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  @media (min-width: $width-mobile-album) {
+    font-size: $text-tablet-font;
+    line-height: $text-tablet-line;
+    min-width: $width-mobile-album;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: $width-tablet) {
+    min-width: $width-tablet;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    font-size: $text-desktop-font;
+    line-height: $text-desktop-line;
+    min-width: $width-tablet-album;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: $width-desktop) {
+    min-width: $width-desktop;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: clip;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.login__img {
+  width: 30px;
+  height: 30px;
+  fill: $base-white;
+  overflow: visible;
+
+  @media (min-width: $width-tablet-album) {
+    fill: $base-white;
+  }
+}
+
+.login__img--alternative {
+  
+  @media (min-width: $width-tablet-album) {
+    fill: $base-white;
+  }
+}
+
+.hr {
+  width: 160px;
+  margin: 0 auto;
+  height: 2px;
+  background-color: $base-white;
+}
+
+.container {
+  width: 100%;
+  margin-inline-start: $gap-mobile;
+  margin-inline-end: $gap-mobile;
+  display: flex;
+
+  @media (min-width: $width-mobile-album) {
+    width: $width-mobile-album-container;
+    margin-inline-start: $gap-tablet;
+    margin-inline-end: $gap-tablet;
+  }
+
+  @media (min-width: $width-tablet) {
+    width: $width-tablet-container;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    width: $width-tablet-album-container;
+  }
+
+  @media (min-width: $width-desktop) {
+    width: $width-desktop-container;
+  }
+}
+
+.container--catalog {
+  flex-direction: column;
+}
+
+.timer {
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  background-color: $base-white;
+  top: 170px;
+  right: 10px;
+  border-radius: 15px;
+  color: $base-white;
+  font-size: $sm-text-mobile-font;
+  padding-inline-start: 30px;
+  padding-block-start: 1px;
+  // background-image: url("../img/icon-2-fordev-time5.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 5px 5px;
+
+  @media (min-width: $width-mobile-album) {
+    right: auto;
+    left: 167px;
+  }
+
+  @media (min-width: $width-tablet) {
+    right: 10px;
+    left: auto;
+  }
+
+  @media (min-width: $width-desktop) {
+    top: 215px;
+  }
+}
+
+.timer--long {
+  width: 90px;
+  // background-image: url("../img/icon-2-fordev-time55.svg");
+
+  @media (min-width: $width-mobile-album) {
+    left: 157px;
+  }
+}
+
+.debug-illumination--red {
+  outline: 1px solid red !important;
+  background-color: rgba(255,0,0, .3) !important;
+}
+
+.debug-illumination--blue {
+  outline: 1px solid blue !important;
+  background-color: rgba(0,17,255, .3) !important;
+}
+
+.debug-illumination--green {
+  outline: 1px solid green !important;
+  background-color: rgba(0,128,0, .3) !important;
+}

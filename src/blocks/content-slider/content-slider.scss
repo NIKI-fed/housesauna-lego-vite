@@ -1,0 +1,183 @@
+.content-slider {
+  position: relative;
+  overflow: hidden;
+  margin-block-start: $break-x-small;
+  margin-block-end: $break-x-small;
+
+  @media (min-width: $width-mobile-album) {
+  }
+
+  @media (min-width: $width-tablet) {
+    margin-block-start: $break-small;
+    margin-block-end: $break-small;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    margin-block-start: $gap-2-mobile;
+    margin-block-end: $gap-2-mobile;
+  }
+}
+
+.content-slider--top {
+  margin-block-start: 0;
+
+  @media (min-width: $width-mobile-album) {
+  }
+
+  @media (min-width: $width-tablet) {
+    margin-block-start: 0;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    margin-block-start: 0;
+  }
+}
+
+.content-slider__wrapper {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  transition: transform 0.6s ease;
+}
+
+.content-slider__wrapper--top {
+
+  @media (min-width: $width-tablet-album) {
+    max-height: 60vh;
+  }
+}
+
+.content-slider__item {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.content-slider__item--houses {
+  background-image: url("../img/projects-promo-houses.jpg");
+}
+
+.content-slider__item--saunas {
+  background-image: url("../img/projects-promo-saunas.jpg");
+}
+
+.content-slider__item--projectsSmall {
+  // TOGO BG IMG
+  background-image: url("../img/projects-promo-saunas.jpg");
+}
+
+.content-slider__item--projects {
+  // TOGO BG IMG
+  background-image: url("../img/projects-promo-saunas.jpg");
+}
+
+.content-slider__item--projectsBig {
+  // TOGO BG IMG
+  background-image: url("../img/projects-promo-saunas.jpg");
+}
+
+.content-slider__text {
+  align-content: flex-start;
+}
+
+.content-slider__control {
+  position: absolute;
+  bottom: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: $base-white;
+  text-align: center;
+  opacity: 0.5;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, .5);
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.content-slider__control--quote {
+  bottom: calc(100vw * 3 / 4);
+
+  @media (min-width: $width-tablet) {
+    bottom: 55vw;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    bottom: 50%;
+  }
+}
+
+.content-slider__control:hover,
+.content-slider__control:focus {
+  color: $base-white;
+  text-decoration: none;
+  outline: 0;
+  opacity: .9;
+}
+
+.content-slider__control-left {
+  left: 20px;
+
+  @media (min-width: $width-tablet) {
+    left: 20px;
+  }
+
+  @media (min-width: $width-desktop) {
+    left: 50px;
+  }
+}
+
+.content-slider__control-right {
+  right: 20px;
+
+  @media (min-width: $width-tablet) {
+    right: 20px;
+  }
+
+  @media (min-width: $width-desktop) {
+    right: 50px;
+  }
+}
+
+.content-slider__control::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.content-slider__control-left::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.content-slider__control-right::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.content-slider__bullets {
+  position: absolute;
+  top: 90%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  left: calc(50% - 90px);
+}
+
+.content-slider__bullet {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: $base-white-alpha-33;
+  cursor: pointer;
+}
+
+.content-slider__bullet-active {
+  background-color: $base-white;
+}

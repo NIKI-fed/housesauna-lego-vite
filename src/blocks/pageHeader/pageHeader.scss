@@ -1,0 +1,75 @@
+.pageHeader {
+  background-color: $base-black-alpha;
+  position: fixed;
+  width: 100vw;
+  z-index: 10;
+  
+  @media (min-width: $width-tablet-album) {
+    display: flex;
+    background-color: $base-black;
+    width: 100%;
+  }
+}
+
+.pageHeader__logoWrapper {
+  background-color: $base-black;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: center;
+  padding-block-start: 10px;
+  padding-block-end: 10px;
+  padding-inline-start: 5px;
+  padding-inline-end: $padding-mobile;
+
+  @media (min-width: $width-tablet-album) {
+    display: none;
+  }
+}
+
+.pageHeader__logoLink {
+  justify-self: center;
+  margin-inline-end: 30px;
+}
+
+.pageHeader__logo {
+
+}
+
+.pageHeader__contacts {
+  display: grid;
+  grid-gap: 10px;
+  height: fit-content;
+  padding-inline-end: $padding-mobile;
+  padding-inline-start: $padding-mobile;
+  padding-block-end: $padding-mobile;
+  padding-block-start: $padding-mobile;
+}
+
+.pageHeader__phone {
+  border-radius: 7px;
+  border: 1px solid $base-white;
+  padding-inline-start: 25px;
+  padding-inline-end: 25px;
+  width: fit-content;
+  height: 40px;
+  color: $base-white;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: $sm-text-mobile-font;
+  line-height: $sm-text-mobile-line;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $width-tablet-album) {
+    border: none;
+    padding-inline-end: 0;
+    padding-inline-start: 0;
+    height: 20px;
+  }
+}
+
+.pageHeader__phone:hover,
+.pageHeader__phone:focus {
+  color: $base-white-alpha;
+}

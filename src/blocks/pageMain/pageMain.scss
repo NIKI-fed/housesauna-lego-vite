@@ -1,0 +1,7 @@
+.pageMain {
+  padding-block-start: 75px;
+
+  @media (min-width: $width-tablet-album) {
+    padding-block-start: 80px;
+  }
+}

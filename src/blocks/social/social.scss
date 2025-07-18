@@ -1,0 +1,76 @@
+.social {
+  display: flex;
+  padding-inline-end: $padding-mobile;
+  padding-inline-start: $padding-mobile;
+  height: 40px;
+  align-items: center;
+  
+  @media (min-width: $width-tablet-album) {
+    height: 80px;
+    order: 1;
+    padding-inline-end: 0;
+  }
+}
+
+.social__item {
+  width: 30px;
+  height: 30px;
+  padding: 4px;
+  content: "";
+  background-color: $base-white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  color: transparent;
+  margin-inline-end: 8px;
+}
+
+.social__item:last-child {
+  margin-inline-end: 0;
+}
+
+.social__item:hover,
+.social__item:focus {
+  background-color: $base-white-alpha;
+}
+
+.social__item:hover .social__icon--yt,
+.social__item:focus .social__icon--yt {
+  fill: #FF0000;
+}
+
+.social__item:hover .social__icon--fb,
+.social__item:focus .social__icon--fb {
+  fill: #4267B2;
+}
+
+.social__item:hover .social__icon--insta,
+.social__item:focus .social__icon--insta {
+  fill: #5B51D8;
+}
+
+.social__item--big {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  background-color: $base-white-alpha;
+}
+
+.social__item--big:hover,
+.social__item--big:focus {
+  background-color: $base-white;
+}
+
+.social__item--big:not(:last-of-type) {
+  margin-inline-end: 32px;
+  
+  @media (min-width: $width-tablet) {
+    margin-inline-end: 32px;
+  }
+}
+
+.social__icon {
+  width: 100%;
+  height: 100%;
+  fill: $base-darker;
+}

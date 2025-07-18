@@ -1,0 +1,80 @@
+.button {
+  border-radius: 7px;
+  border: 1px solid $base-white;
+  padding-inline-start: 25px;
+  padding-inline-end: 25px;
+  width: fit-content;
+  height: 40px;
+  color: $base-white;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: $sm-text-mobile-font;
+  line-height: $sm-text-mobile-line;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  transition-property: all;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  color: $base-black;
+  background-color: $base-white-alpha-9;
+  box-shadow: 0px 3px 8px 0px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.button:active {
+  color: $base-black;
+  background-color: $base-white-alpha-6;
+  box-shadow: 0px 1px 6px 0px rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.button--uppercase {
+  text-transform: uppercase;
+}
+
+.button--bold {
+  font-weight: bold;
+}
+
+.button--big {
+  min-height: 60px;
+  min-width: 120px;
+}
+
+.button--alt {
+  border: 1px solid $base-black-alpha;
+  color: $base-dark;
+}
+
+.button--alt:hover,
+.button--alt:focus {
+  color: $base-black;
+  background-color: $base-black-alpha-10;
+  box-shadow: 0px 3px 8px 0px rgba(51, 51, 51, 0.2);
+  transform: translateY(-2px);
+}
+
+.button--alt:active {
+  color: $base-black;
+  background-color: $base-black-alpha-10;
+  box-shadow: 0px 1px 6px 0px rgba(51, 51, 51, 0.2);
+  transform: translateY(-1px);
+}
+
+.button--marginTop-15 {
+  margin-block-start: 15px;
+}
+
+.button--marginBottom-20 {
+  margin-block-end: 20px;
+}
+
+.button--toBottom {
+  margin-block-start: auto;
+}

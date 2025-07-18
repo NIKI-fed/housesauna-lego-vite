@@ -1,0 +1,102 @@
+.list {
+  max-width: 740px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+
+  @media (min-width: $width-tablet) {
+    padding-inline-start: $break-big;
+  }
+
+  @media (min-width: $width-tablet-album) {
+    max-width: 740px;
+  }
+}
+
+.list--paddingLeft-small {
+
+  @media (min-width: $width-tablet) {
+    padding-inline-start: $break-x-small;
+  }
+}
+
+.list--paddingTop-none {
+  padding-block-start: 0px;
+}
+
+.list--paddingBottom-none {
+  padding-block-end: 0px;
+}
+
+.list--ordered {
+  list-style: none;
+  counter-set: count;
+}
+
+.list--unordered {
+  list-style: none;
+}
+
+.list__item {
+  position: relative;
+}
+
+.list__item:not(:last-child) {
+  margin-block-end: $break-x-small;
+
+  @media (min-width: $width-tablet) {
+    margin-block-end: $break-small;
+  }
+}
+
+.list__item--ordered {
+  counter-increment: count;
+}
+
+.list__item--ordered::before {
+  position: absolute;
+  content: counter(count);
+  width: 40px;
+  height: 40px;
+  left: -60px;
+  border-radius: 50%;
+  background-color: $base-dark;
+  color: $base-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $width-tablet) {
+    padding-inline-end: 2px;
+  }
+}
+
+.list__item--unordered::before {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 40px;
+  left: -45px;
+  color: $base-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/icons/checkmark.svg");
+  background-size: 40px;
+  background-repeat: no-repeat;
+  
+  @media (min-width: $width-tablet) {
+    padding-inline-end: 2px;
+    left: -55px;
+  }
+}
+
+.list__item--ordered:not(:last-child)::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 1px;
+  left: -40px;
+  top: 40px;
+  background: linear-gradient(180deg, rgba(136,136,136,1) 0%, rgba(255,255,255,1) 100%);
+
+}

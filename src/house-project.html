@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="/css/style.min.css"> -->
+  <title>ДомБаня - Типовой дом</title>
+</head>
+<body class="pageBody">
+  <header class="pageHeader">
+    <div class="pageHeader__logoWrapper">
+      <div class="burger">
+        <div class="burger__element"></div>
+      </div>
+      <a href="/" class="pageHeader__logoLink"><img src="/img/logo.svg" width="150" height="47" alt="" class="logo pageHeader__logo"></a>
+    </div>
+    <nav class="mainNav">
+      <ul class="mainNav__list">
+        <li class="mainNav__item"><a href="/about.html" class="mainNav__link">О нас</a></li>
+        <li class="mainNav__item"><a href="/production.html" class="mainNav__link">Производство</a></li>
+        <li class="mainNav__item"><a href="/design.html" class="mainNav__link">Проектирование</a></li>
+        <li class="mainNav__item"><a href="/houses.html" class="mainNav__link">Проекты</a></li>
+        <li class="mainNav__item mainNav__item--logo"><a href="/" class="mainNav__link"><img src="/img/logo.svg" alt="" class="logo"></a></li>
+      </ul>
+      <div class="social">
+        <a href="#TODO" class="social__item">
+          <svg class="social__icon social__icon--yt" width="20" height="20">
+            <use href="/img/sprite.svg#icon-youtube"></use>
+          </svg>
+        </a>
+        <a href="#TODO" class="social__item">
+          <svg class="social__icon social__icon--fb" width="20" height="20">
+            <use href="/img/sprite.svg#icon-facebook"></use>
+          </svg>
+        </a>
+        <a href="#TODO" class="social__item">
+          <svg class="social__icon social__icon--insta" width="20" height="20">
+            <use href="/img/sprite.svg#icon-instagram"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="pageHeader__contacts">
+        <a href="tel:+79104084800" class="pageHeader__phone">+7(910)408-48-00</a>
+        <a href="tel:+79857601534" class="pageHeader__phone">+7(985)760-15-34</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pageMain">
+
+    <section class="grid">
+      <article class="grid__article">
+        <div class="grid__element grid__element--wide">
+          <h2 class="heading heading--h2 heading--bold">Дом из клееного бруса 97,8м²</h2>
+          <p class="text">
+            Простой и уютный одноэтажный дом с двумя спальнями, залом и огромной террасой.
+          </p>
+          <picture class="img">
+            <img src="/img/design/design-98.jpeg" alt="" class="img__img">
+          </picture>
+          <h2 class="heading heading--h2 heading--paddingTop-50">Что входит в базовый комплект
+            (тепловой&nbsp;контур) дома?</h2>
+          <ul class="text text--sm list list--paddingLeft-small">
+            <li>Проектные и геодезические работы.</li>
+            <li>Устройство фундамента (свайно-забивной для базового комплекта).</li>
+            <li>Монтаж и демонтаж строительных лесов.</li>
+            <li>Монтаж стен из клееного бруса, колонн, обвязочного бруса с обработкой биозащиным составом, монтаж пружинного узла «сила» для крепления бруса между собой.</li>
+            <li>Монтаж балок перекрытий цоколя и потолка парной, с дощатым настилом по балкам, обработка балок биозащитным составом, монтаж стропильно-балочной системы.</li>
+            <li>Монтаж кровли с утеплением 200 мм, монтаж бруса поперек стропил с внутренним утеплением 50 мм, водосточной системы и снегозадержателей.</li>
+            <li>Обработка стен из бруса защитным составом снаружи (антисептик, грунт + 2 слоя покраски) и внутри (2 слоя покраски), отбеливание стен и колонн со всех сторон, шлифовка стен в 1 слой, а также шлифовка торцов с обработкой спецсоставом.</li>
+            <li>Обшивка свесов карнизов отделочной рейкой, обработка рейки защитным составом, монтаж лобовой карнизной доски.</li>
+            <li>Изготовление и монтаж обсадных коробок и блоков окон и входной двери, изготовление и монтаж видимых поверхностей доборов, наличников с обработкой защитным составом в 2 слоя.</li>
+            <li>Утепление перекрытий 200 мм и установка сетки от грызунов под полом.ами, ограничителями открывания, подоконниками, отливами.</li>
+          </ul>
+          <h2 class="heading heading--h2 heading--paddingTop-50">Хочу такой дом</h2>
+          <form action="/submit" class="form form--wide" method="POST">
+            <label for="" class="form__label">
+              <input placeholder="example@example.ru" type="email" class="form__input form__input--dark form__input--email" required>
+              <span class="form__placeholder form__placeholder--dark">Ваш email</span>
+            </label>
+            <label for="" class="form__label">
+              <input type="text" class="form__input form__input--dark" required>
+              <span class="form__placeholder form__placeholder--dark">Ваше имя</span>
+            </label>
+            <label for="" class="form__label">
+              <input placeholder="(ххх) xxx-xx-xx" maxlength="15" type="tel" class="form__input form__input--dark form__input--phone" required>
+              <span class="form__placeholder form__placeholder--dark">Ваш телефон</span>
+            </label>
+            <button class="form__submit form__submit--dark form__submit--wide form__submit--center button button--big">Позвоните мне</button>
+          </form>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="overlay"></div>
+
+  <footer class="pageFooter">
+    <div class="pageFooter__left">
+      <iframe class="pageFooter__map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A1919007e4a7f1e4dc31d236cd17e9db5523542cb267827a728b8af519d90c464&amp;source=constructor" frameborder="0"></iframe>
+    </div>
+    <div class="pageFooter__right">
+      <h2 class="heading heading--h2 heading--left heading--white heading--bold">Остались вопросы?</h2>
+      <p class="text text--left">
+        <a type="tel" href="tel:+79104084800" class="text__link text__link--alt">+7 (910) 408-48-00</a></br>
+        <a type="tel" href="tel:+79857601534" class="text__link text__link--alt">+7 (985) 760-15-34</a></br>
+        <a type="email" href="mailto:kirovdt@mail.ru" class="text__link text__link--alt">kirovdt@mail.ru</a>
+      </p>
+      <p class="text text--left text--white text--padding-topBig">
+        Свяжитесь с нами в социальных сетях или другим удобным способом.
+      </p>
+      <ul class="social pageFooter__social">
+        <li class="social__item social__item--big">
+          <a href="https://www.facebook.com/kirovdt">
+            <svg class="social__icon social__icon--fb" width="40" height="40">
+              <use href="/img/sprite.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item social__item--big">
+          <a href="https://www.youtube.com/channel/UCoj58GpShlVhV-euDQdW_nQ">
+            <svg class="social__icon social__icon--yt" width="40" height="40">
+              <use href="/img/sprite.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item social__item--big">
+          <a href="https://www.instagram.com/dom_banya_msk/">
+            <svg class="social__icon social__icon--insta" width="40" height="40">
+              <use href="/img/sprite.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+  <script type="module" src="./blocks/burger/burger.js"></script>
+  <script type="module" src="./blocks/form/form.js"></script>
+</body>
+</html>

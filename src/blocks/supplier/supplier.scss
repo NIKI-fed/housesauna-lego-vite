@@ -1,0 +1,31 @@
+.flex {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    margin: 1rem auto 0;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 10px;
+
+    @media (max-width: $width-tablet) {
+        flex-direction: column;
+    }
+};
+
+.flex__element {
+    max-width: 600px;
+};
+
+.text--bottom {
+    margin-block-end: 15px;
+};
+
+.list .list__item.list__item--close {
+    margin-block-end: 10px;
+};
+
+.iframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

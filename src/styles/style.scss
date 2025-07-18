@@ -1,0 +1,35 @@
+@import "variables.scss";
+@import "general.scss";
+
+@import "../blocks/heading/heading.scss";
+@import "../blocks/text/text.scss";
+@import "../blocks/pageHeader/pageHeader.scss";
+@import "../blocks/burger/burger.scss";
+@import "../blocks/mainNav/mainNav.scss";
+@import "../blocks/pageMain/pageMain.scss";
+@import "../blocks/social/social.scss";
+@import "../blocks/logo/logo.scss";
+@import "../blocks/promo/promo.scss";
+@import "../blocks/content-slider/content-slider.scss";
+@import "../blocks/gallery/gallery.scss";
+@import "../blocks/grid/grid.scss";
+@import "../blocks/img/img.scss";
+@import "../blocks/hr/hr.scss";
+@import "../blocks/list/list.scss";
+@import "../blocks/preview/preview.scss";
+@import "../blocks/overlay/overlay.scss";
+@import "../blocks/quote/quote.scss";
+@import "../blocks/button/button.scss";
+@import "../blocks/form/form.scss";
+@import "../blocks/tabGroups/tabGroups.scss";
+@import "../blocks/pageFooter/pageFooter.scss";
+@import "../blocks/supplier/supplier.scss";
+
+// lightgallery
+@import "../blocks/lightgallery/lg-variables.scss";
+@import "../blocks/lightgallery/lg-fonts.scss";
+@import "../blocks/lightgallery/lg-mixins.scss";
+@import "../blocks/lightgallery/lg-theme-default.scss";
+@import "../blocks/lightgallery/lg-thumbnail.scss";
+@import "../blocks/lightgallery/lightgallery-core.scss";
+@import "../blocks/lightgallery/lightgallery.scss";
