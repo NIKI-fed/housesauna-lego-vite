@@ -1,5 +1,5 @@
-@import 'lg-variables';
-@import 'lg-mixins';
+@use 'lg-variables';
+@use 'lg-mixins';
 .lg-outer {
     .lg-dropdown-overlay {
         background-color: rgba(0, 0, 0, 0.25);
@@ -9,11 +9,11 @@
         position: absolute;
         right: 0;
         top: 0;
-        z-index: $zindex-toolbar - 1;
+        z-index: lg-variables.$zindex-toolbar - 1;
         opacity: 0;
         visibility: hidden;
         will-change: visibility, opacity;
-        @include transition(
+        @include lg-mixins.transition(
             visibility 0s linear 0.18s,
             opacity 0.18s linear 0s
         );
@@ -21,8 +21,8 @@
     &.lg-dropdown-active {
         .lg-dropdown,
         .lg-dropdown-overlay {
-            @include transition-delay(0s);
-            @include transform(translate3d(0, 0px, 0));
+            @include lg-mixins.transition-delay(0s);
+            @include lg-mixins.transform(translate3d(0, 0px, 0));
             opacity: 1;
             visibility: visible;
         }
@@ -43,9 +43,9 @@
         top: 50px;
         opacity: 0;
         visibility: hidden;
-        @include transform(translate3d(0, 5px, 0));
+        @include lg-mixins.transform(translate3d(0, 5px, 0));
         will-change: visibility, opacity, transform;
-        @include transitionCustom(
+        @include lg-mixins.transitionCustom(
             transform 0.18s linear 0s,
             visibility 0s linear 0.5s,
             opacity 0.18s linear 0s

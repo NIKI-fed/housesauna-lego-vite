@@ -1,3 +1,5 @@
+@use "../../styles/variables.scss" as *;
+
 .flex {
     display: flex;
     flex-direction: row;

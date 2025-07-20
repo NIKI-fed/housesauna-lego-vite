@@ -1,3 +1,5 @@
+@use "../../styles/variables.scss" as *;
+
 .quote {
   display: flex;
   flex-direction: column;
@@ -67,7 +69,7 @@
 }
 
 .quote__wrapper:not(.quote__wrapper--house):before {
-  background-image: url('./img/icons/icon-tick-open.svg');
+  background-image: url('../../img/icons/icon-tick-open.svg');
   top: -40px;
   left: $gap-2-mobile;
   
@@ -82,7 +84,7 @@
 }
 
 .quote__wrapper:not(.quote__wrapper--house):after {
-  background-image: url('./img/icons/icon-tick-close.svg');
+  background-image: url('../../img/icons/icon-tick-close.svg');
   bottom: -40px;
   right: $gap-2-mobile;
   

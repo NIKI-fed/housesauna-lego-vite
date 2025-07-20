@@ -1,3 +1,5 @@
+@use "../../styles/variables.scss" as *;
+
 .content-slider {
   position: relative;
   overflow: hidden;
@@ -53,26 +55,26 @@
 }
 
 .content-slider__item--houses {
-  background-image: url("./img/projects-promo-houses.jpg");
+  background-image: url("../../img/projects-promo-houses.jpg");
 }
 
 .content-slider__item--saunas {
-  background-image: url("./img/projects-promo-saunas.jpg");
+  background-image: url("../../img/projects-promo-saunas.jpg");
 }
 
 .content-slider__item--projectsSmall {
   // TOGO BG IMG
-  background-image: url("./img/projects-promo-saunas.jpg");
+  background-image: url("../../img/projects-promo-saunas.jpg");
 }
 
 .content-slider__item--projects {
   // TOGO BG IMG
-  background-image: url("./img/projects-promo-saunas.jpg");
+  background-image: url("../../img/projects-promo-saunas.jpg");
 }
 
 .content-slider__item--projectsBig {
   // TOGO BG IMG
-  background-image: url("./img/projects-promo-saunas.jpg");
+  background-image: url("../../img/projects-promo-saunas.jpg");
 }
 
 .content-slider__text {

@@ -1,3 +1,5 @@
+@use "../../styles/variables.scss" as *;
+
 .button {
   border-radius: 7px;
   border: 1px solid $base-white;

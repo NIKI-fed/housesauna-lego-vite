@@ -1,10 +1,10 @@
-@import 'lg-variables';
-@import 'lg-mixins';
+@use 'lg-variables';
+@use 'lg-mixins';
 $thumbnails-margin: 5px;
 
 .lg-outer {
     .lg-thumb-outer {
-        background-color: $lg-thumb-bg;
+        background-color: lg-variables.$lg-thumb-bg;
         width: 100%;
         max-height: 350px;
         overflow: hidden;
@@ -12,24 +12,24 @@ $thumbnails-margin: 5px;
 
         &.lg-grab {
             .lg-thumb-item {
-                @include grab-cursor;
+                @include lg-mixins.grab-cursor;
             }
         }
 
         &.lg-grabbing {
             .lg-thumb-item {
-                @include grabbing-cursor;
+                @include lg-mixins.grabbing-cursor;
             }
         }
 
         &.lg-dragging {
             .lg-thumb {
-                @include transition-duration(0s !important);
+                @include lg-mixins.transition-duration(0s !important);
             }
         }
         &.lg-rebuilding-thumbnails {
             .lg-thumb {
-                @include transition-duration(0s !important);
+                @include lg-mixins.transition-duration(0s !important);
             }
         }
 
@@ -72,12 +72,12 @@ $thumbnails-margin: 5px;
         @media (min-width: 768px) {
             border-radius: 4px;
             border: 2px solid #fff;
-            @include transition(border-color 0.25s ease);
+            @include lg-mixins.transition(border-color 0.25s ease);
         }
 
         &.active,
         &:hover {
-            border-color: $lg-theme-highlight;
+            border-color: lg-variables.$lg-theme-highlight;
         }
 
         img {
@@ -101,7 +101,7 @@ $thumbnails-margin: 5px;
     }
     &.lg-animate-thumb {
         .lg-thumb {
-            @include transition-timing-function(
+            @include lg-mixins.transition-timing-function(
                 cubic-bezier(0.215, 0.61, 0.355, 1)
             );
         }

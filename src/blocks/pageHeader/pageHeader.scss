@@ -1,3 +1,5 @@
+@use "../../styles/variables.scss" as *;
+
 .pageHeader {
   background-color: $base-black-alpha;
   position: fixed;
