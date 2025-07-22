@@ -3,7 +3,7 @@
 .promo {
   display: grid;
   background-color: $base-black;
-  background-image: url("@img/main-promo-house.jpg");
+  background-image: url("../../img/main-promo-house.jpg");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -52,16 +52,16 @@
 
 .promo--about {
   //TODO: find image
-  background-image: url("@img/about-promo-team.jpg");
+  background-image: url("../../img/about-promo-team.jpg");
 }
 .promo--production {
   //TODO: find image
-  background-image: url("@img/production-promo-brus.png");
+  background-image: url("../../img/production-promo-brus.png");
 }
 
 .promo--design {
   //TODO: find image
-  background-image: url("@img/design-promo-sketch.jpg");
+  background-image: url("../../img/design-promo-sketch.jpg");
 }
 
 .promo__heading {

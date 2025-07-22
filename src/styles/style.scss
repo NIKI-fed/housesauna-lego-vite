@@ -1,5 +1,5 @@
-@use "./variables.scss";
-@use "./general.scss";
+@use "./variables.scss" as *;
+@use "./general.scss" as *;
 
 @use "../blocks/heading/heading.scss";
 @use "../blocks/text/text.scss";
