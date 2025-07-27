@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import postcss from 'postcss';
+import autoprefixer from 'autoprefixer';
 
 const root = resolve(__dirname, './src');
 const outDir = resolve(__dirname, './dist');
@@ -25,6 +27,9 @@ export default defineConfig({
         devSourcemap: true,
         sourcemap: true,
         postcss: {
+            plugins: [
+                autoprefixer(),
+            ],
             map: true
         },
     },
@@ -36,7 +41,6 @@ export default defineConfig({
         minify: 'esbuild',
         cssMinify: 'esbuild',
         sourcemap: true,
-        
 
         rollupOptions: {
             input: {
@@ -47,7 +51,8 @@ export default defineConfig({
                 house: resolve(root, 'house.html'),
                 houses: resolve(root, 'houses.html'),
                 production: resolve(root, 'production.html'),
-                supplier: resolve(root, 'supplier.html')
+                supplier: resolve(root, 'supplier.html'),
+                style: resolve(root, 'styles/style.scss'),
             },
 
             output: {

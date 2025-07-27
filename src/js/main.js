@@ -1,8 +1,7 @@
 import'../styles/style.scss';
-import'../styles/variables.scss';
-import'../styles/general.scss';
 
 import('./more.js');
+import('./route-panel-control.js');
 import('../blocks/burger/burger.js');
 import('../blocks/content-slider/content-slider.js');
 import('../blocks/form/form.js');
