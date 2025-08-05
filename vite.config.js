@@ -2,6 +2,10 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import postcss from 'postcss';
 import autoprefixer from 'autoprefixer';
+import svgSprite from 'vite-plugin-svg-sprite';
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
+import createSvgSpritePlugin from 'vite-plugin-svg-sprite';
 
 const root = resolve(__dirname, './src');
 const outDir = resolve(__dirname, './dist');
@@ -33,6 +37,77 @@ export default defineConfig({
             map: true
         },
     },
+
+    resolve: {
+        alias: {
+            '@img': resolve(root, 'img')
+        }
+    },
+
+    plugins: [
+
+        createSvgIconsPlugin({
+            // Указываем папку с SVG-иконками
+            iconDirs: [
+                resolve(__dirname, './src/img')
+            ],
+            
+            // Настройка вывода
+            symbolId: 'icon-[dir]-[name]', // Формат именования спрайтов
+            svgoOptions: true,             // Оптимизация SVG
+            
+            // Сохранение структуры папок
+            preserveFileStructure: true,
+            preserveEntrySignatures: true,
+            
+            // Настройка пути вывода
+            outputDir: 'dist/css/',
+            // publicPath: '/sprite/',
+            
+            // Дополнительные настройки
+            inject: 'body-last',          // Куда вставлять спрайт
+            spriteConfig: {
+                mode: {
+                symbol: {
+                    example: false          // Отключаем пример HTML
+                }
+                }
+            }
+        }),
+
+        // createSvgSpritePlugin({
+        //     exportType: 'vanilla',
+        //     include: 'img/icons/*.svg'
+        // }),
+
+        // svgSprite({
+        //     // Папка с SVG-иконками
+        //     iconDirs: [
+        //         resolve(root, __dirname, './src'),
+        //     ],
+        //     // Символы для использования в спрайте
+        //     symbolId: '[name]',
+        //     // Настройки для инжектирования спрайта в HTML
+        //     inject: true,
+        //     // Настройки для разработки
+        //     svgoOptions: true,
+        //         plugins: [
+        //             { name: 'removeAttrs', params: { attrs: ['fill', 'stroke'] } }
+        //         ]
+            
+        // }),
+
+
+
+        viteStaticCopy({
+            targets: [
+                {
+                    src: 'img',
+                    dest: ''
+                }
+            ],
+        })
+    ],
 
     build: {
         outDir,
@@ -67,15 +142,18 @@ export default defineConfig({
                         : 'js/[name].js';
                 },
                 
-                assetFileNames: ({ name }) => {
-                name = name?.toLowerCase() ?? '';
+                assetFileNames: ({ name, source }) => {
+                    name = name?.toLowerCase() ?? '';
+
+                const srcPath = typeof source === 'string' ? source.replace(/\\/g, '/') : '';
+                    // if (/\.(gif|jpe?g|png|webp|svg)$/.test(name)) {
+                    //     return 'img/[name][extname]';
+                    // }
+
                     if (/\.(ttf|otf|woff|woff2|eot)$/.test(name)) {
                         return 'fonts/lightgallery/[name][extname]';
                     }
                     
-                    if (/\.(gif|jpe?g|png|webp|svg)$/.test(name)) {
-                        return 'img/[name][extname]';
-                    }
                     
                     if (/\.css$/.test(name)) {
                         return 'css/[name][extname]';
