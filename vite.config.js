@@ -1,14 +1,95 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
-import postcss from 'postcss';
 import autoprefixer from 'autoprefixer';
-import svgSprite from 'vite-plugin-svg-sprite';
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import svgSpritemap from 'vite-plugin-svg-spritemap'
 import { viteStaticCopy } from 'vite-plugin-static-copy';
-import createSvgSpritePlugin from 'vite-plugin-svg-sprite';
+import fs from 'fs';
+import path from 'path';
 
 const root = resolve(__dirname, './src');
 const outDir = resolve(__dirname, './dist');
+
+// Заменяем все /img/icon-*.svg на svg из спрайта
+function replaceSvgToSprite() {
+    return {
+        name: 'replace-svg-to-sprite',
+        apply: 'build',
+        writeBundle() {
+            console.log('🔍 Searching for HTML files to process...');
+            
+            function processDirectory(dir) {
+                if (!fs.existsSync(dir)) return;
+                
+                const files = fs.readdirSync(dir);
+                
+                files.forEach(file => {
+                    const filePath = path.join(dir, file);
+                    const stat = fs.statSync(filePath);
+                    
+                    if (stat.isDirectory()) {
+                        processDirectory(filePath);
+                    } else if (file.endsWith('.html')) {
+                        processHtmlFile(filePath);
+                    }
+                });
+            }
+            
+            function processHtmlFile(filePath) {
+                try {
+                    const relativePath = path.relative(outDir, filePath);
+                    console.log(`📄 Processing: ${relativePath}`);
+                    
+                    let html = fs.readFileSync(filePath, 'utf8');
+                    
+                    // Заменяем пути на спрайт
+                    const newHtml = html.replace(
+                        /<use href="\/img\/icon-([a-zA-Z0-9-]+)\.svg"><\/use>/g,
+                        '<use href="/img/sprite.svg#icon-$1"></use>'
+                    );
+                    
+                    if (newHtml !== html) {
+                        fs.writeFileSync(filePath, newHtml, 'utf8');
+                        console.log(`   ✅ Replaced SVG paths`);
+                    } else {
+                        console.log(`   ℹ️ No SVG paths found to replace`);
+                    }
+                } catch (error) {
+                    console.error(`   ❌ Error: ${error.message}`);
+                }
+            }
+            
+            processDirectory(outDir);
+            console.log('✅ HTML processing completed');
+        }
+    };
+};
+
+// Форматируем спрайт после его создания для читаемости
+function formatSpritePlugin() {
+    return {
+        name: 'format-sprite-plugin',
+        apply: 'build',
+        closeBundle() {
+            setTimeout(() => {
+                try {
+                    const spritePath = path.resolve(outDir, 'img/sprite.svg');
+                    if (fs.existsSync(spritePath)) {
+                        let content = fs.readFileSync(spritePath, 'utf8');
+                        // Добавляем переносы ДО <symbol и ПОСЛЕ </symbol>
+                        content = content
+                            .replace(/<symbol/g, '\n\n<symbol')
+                            .replace(/<\/svg>/g, '\n\n</svg>')
+                        fs.writeFileSync(spritePath, content, 'utf8');
+                    } else {
+                        console.log('❌ Sprite not found:', spritePath);
+                    }
+                } catch (error) {
+                    console.error('❌ Error formatting sprite:', error);
+                }
+            }, 100); // Небольшая задержка чтобы файл точно был записан
+        }
+    };
+};
 
 export default defineConfig({
 
@@ -45,74 +126,34 @@ export default defineConfig({
     },
 
     plugins: [
-
-        createSvgIconsPlugin({
-            // Указываем папку с SVG-иконками
-            iconDirs: [
-                resolve(__dirname, './src/img')
-            ],
-            
-            // Настройка вывода
-            symbolId: 'icon-[dir]-[name]', // Формат именования спрайтов
-            svgoOptions: true,             // Оптимизация SVG
-            
-            // Сохранение структуры папок
-            preserveFileStructure: true,
-            preserveEntrySignatures: true,
-            
-            // Настройка пути вывода
-            outputDir: 'dist/css/',
-            // publicPath: '/sprite/',
-            
-            // Дополнительные настройки
-            inject: 'body-last',          // Куда вставлять спрайт
-            spriteConfig: {
-                mode: {
-                symbol: {
-                    example: false          // Отключаем пример HTML
-                }
-                }
+        svgSpritemap({
+            pattern: 'src/img/icons/*.svg', // Путь к SVG иконкам
+            filename: 'img/sprite.svg', // Итоговый спрайт
+            svgo: false,
+            symbols: {
+                prefix: 'icon-',
+                id: '{name}'
             }
         }),
 
-        // createSvgSpritePlugin({
-        //     exportType: 'vanilla',
-        //     include: 'img/icons/*.svg'
-        // }),
+        formatSpritePlugin(),
+        replaceSvgToSprite(),
 
-        // svgSprite({
-        //     // Папка с SVG-иконками
-        //     iconDirs: [
-        //         resolve(root, __dirname, './src'),
+        // viteStaticCopy({
+        //     targets: [
+        //         {
+        //             src: 'img',
+        //             dest: '',
+        //             filter: (filePath) => !filePath.includes('icons') // Исключаем иконки
+        //         }
         //     ],
-        //     // Символы для использования в спрайте
-        //     symbolId: '[name]',
-        //     // Настройки для инжектирования спрайта в HTML
-        //     inject: true,
-        //     // Настройки для разработки
-        //     svgoOptions: true,
-        //         plugins: [
-        //             { name: 'removeAttrs', params: { attrs: ['fill', 'stroke'] } }
-        //         ]
-            
-        // }),
-
-
-
-        viteStaticCopy({
-            targets: [
-                {
-                    src: 'img',
-                    dest: ''
-                }
-            ],
-        })
+        // })
     ],
 
     build: {
         outDir,
         emptyOutDir: true,
-        assetsInlineLimit: 4096,
+        assetsInlineLimit: 0,
         minify: 'esbuild',
         cssMinify: 'esbuild',
         sourcemap: true,
@@ -121,12 +162,14 @@ export default defineConfig({
             input: {
                 main: resolve(root, 'index.html'),
                 about: resolve(root, 'about.html'),
+                contact_form: resolve(root, 'contact-form.html'),
                 design: resolve(root, 'design.html'),
                 house_project: resolve(root, 'house-project.html'),
                 house: resolve(root, 'house.html'),
                 houses: resolve(root, 'houses.html'),
                 production: resolve(root, 'production.html'),
                 supplier: resolve(root, 'supplier.html'),
+                
                 style: resolve(root, 'styles/style.scss'),
             },
 
@@ -145,15 +188,13 @@ export default defineConfig({
                 assetFileNames: ({ name, source }) => {
                     name = name?.toLowerCase() ?? '';
 
-                const srcPath = typeof source === 'string' ? source.replace(/\\/g, '/') : '';
-                    // if (/\.(gif|jpe?g|png|webp|svg)$/.test(name)) {
-                    //     return 'img/[name][extname]';
-                    // }
+                    if (/\.svg$/.test(name)) {
+                        return 'img/[name][extname]';
+                    }
 
                     if (/\.(ttf|otf|woff|woff2|eot)$/.test(name)) {
                         return 'fonts/lightgallery/[name][extname]';
                     }
-                    
                     
                     if (/\.css$/.test(name)) {
                         return 'css/[name][extname]';

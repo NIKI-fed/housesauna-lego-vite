@@ -1,4 +1,4 @@
-import'../styles/style.scss';
+// import'../styles/style.scss';
 
 import('./more.js');
 import('./route-panel-control.js');

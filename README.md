@@ -8,3 +8,8 @@ Consists of all static front end files.
 2. git clone git@github.com:YOUR-PROFILE/housesauna-lego-vite.git on terminal
 3. npm run dev - для разработки
 4. npm run build - для сборки в папку dist
+
+Для запуска на pyton
+1. python -m venv venv
+2. .\venv\Scripts\Activate.ps1
+3. python manage.py runserver localhost:8000

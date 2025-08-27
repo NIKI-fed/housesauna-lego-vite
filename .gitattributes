@@ -1,0 +1,13 @@
+# Настройки для разных типов файлов
+*.svg text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.scss text eol=lf
+
+# Для бинарных файлов-text
+*.png binary
+*.jpg binary
+*.gif binary
+*.woff binary
+*.woff2 binary
