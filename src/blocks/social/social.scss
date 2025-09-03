@@ -8,7 +8,7 @@
   align-items: center;
   
   @media (min-width: $width-tablet-album) {
-    height: 80px;
+    height: 82px;
     order: 1;
     padding-inline-end: 0;
   }
@@ -118,20 +118,20 @@
   height: 100%;
   fill: $base-darker;
   
-  --rt-path1: #111111;
-  --rt-path2: rgb(100, 100, 100);
+  --rt-path1: #{$base-blue};
+  --rt-path2: #6868d8;
   --rt-path3: #FFFFFF;
   
-  --vk-path1: #111111;
+  --vk-path1: #{$base-blue};
   --vk-path2: #FFFFFF;
 
-  --tg-path1: #111111;
+  --tg-path1: #{$base-blue};
   --tg-path2: #c8daea;
   --tg-path3: #a9c9dd;
   --tg-path4: #f6fbfe;
 
-  --wa-path1: #111111;
-  --wa-path2: #111111;
+  --wa-path1: #{$base-blue};
+  --wa-path2: #{$base-blue};
   --wa-path3: #ffffff;
   --wa-path4: #ffffff;
 

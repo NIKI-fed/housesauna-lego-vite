@@ -31,6 +31,11 @@
 .pageHeader__logoLink {
   justify-self: center;
   margin-inline-end: 30px;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  height: 100%;
+
 }
 
 .pageHeader__logo {

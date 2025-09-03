@@ -61,7 +61,7 @@
   height: 40px;
   left: -60px;
   border-radius: 50%;
-  background-color: $base-dark;
+  background-color: $base-blue;
   color: $base-white;
   display: flex;
   justify-content: center;
@@ -99,6 +99,6 @@
   width: 1px;
   left: -40px;
   top: 40px;
-  background: linear-gradient(180deg, rgba(136,136,136,1) 0%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(180deg, $base-blue 0%, rgba(255,255,255,1) 100%);
 
 }

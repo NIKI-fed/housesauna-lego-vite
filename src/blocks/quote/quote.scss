@@ -69,7 +69,16 @@
 }
 
 .quote__wrapper:not(.quote__wrapper--house):before {
-  background-image: url('../../img/icons/icon-tick-open.svg');
+
+  @if $env == 'development' {
+    background-image: url("/../../img/icons/icon-tick-open.svg");
+  }
+  // Для продакшена
+  @else {
+    background-image: url("../../img/icons/icon-tick-open.svg");
+  }
+  // background-image: url('@img/icons/icon-tick-open.svg'); // работает в сборке, но не в dev режиме
+  
   top: -40px;
   left: $gap-2-mobile;
   
@@ -84,7 +93,15 @@
 }
 
 .quote__wrapper:not(.quote__wrapper--house):after {
-  background-image: url('../../img/icons/icon-tick-close.svg');
+  
+  @if $env == 'development' {
+    background-image: url("/../../img/icons/icon-tick-close.svg");
+  }
+  // Для продакшена
+  @else {
+    background-image: url("../../img/icons/icon-tick-close.svg");
+  }
+
   bottom: -40px;
   right: $gap-2-mobile;
   

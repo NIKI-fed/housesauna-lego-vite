@@ -2,7 +2,7 @@
 
 .button {
   border-radius: 7px;
-  border: 1px solid $base-white;
+  // border: 1px solid $base-white;
   padding-inline-start: 25px;
   padding-inline-end: 25px;
   width: fit-content;
@@ -19,6 +19,7 @@
   transition-duration: .2s;
   transition-timing-function: ease-in-out;
   cursor: pointer;
+  background-color: $base-blue;
 }
 
 .button:hover,
@@ -52,6 +53,7 @@
 .button--alt {
   border: 1px solid $base-black-alpha;
   color: $base-dark;
+  background-color: white;
 }
 
 .button--alt:hover,

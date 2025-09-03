@@ -1,11 +1,11 @@
 @use "../../styles/variables.scss" as *;
 
 .logo {
-  width: 120px;
-  height: 47px;
+  width: 74px;
+  height: 74px;
   
   @media (min-width: $width-tablet-album) {
-    width: 120px;
-    height: 47px;
+    width: 74px;
+    height: 74px;
   }
 }

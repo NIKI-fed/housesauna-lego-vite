@@ -68,13 +68,13 @@ $h6-desktop-line: 26px;
 $base-wrong: #FFEEED;
 $base-wrong-dark-33: #CC433D33;
 
-$base-black: #000000;
+$base-black: #13133A;
 $base-black-alpha: #00000040;
 $base-black-alpha-10: #00000010;
 $base-black-alpha-9: #00000090;
 $base-overlay: #000000dd;
 $base-dark: #333333;
-$base-darker: #111111;
+$base-darker: #13133A;
 $base-grey: #888888;
 $base-white: #ffffff;
 $base-white-alpha: #ffffffcc;
@@ -86,6 +86,7 @@ $base-action-color: #ffd52e;
 $base-action-hover-color: #ffe32e;
 $base-action-brown: #665533;
 $base-action-brown-alpha-3: #66553330;
+$base-blue: #32328E;
 
 $cookies-bg: #8298B7;
 $cookies-shadow: 0px 10px 10px #2E75E633;
@@ -105,3 +106,5 @@ $break-x-small: 40px;
 $break-small: 60px;
 $break: 90px;
 $break-big: 120px;
+
+$env: 'development' !default;

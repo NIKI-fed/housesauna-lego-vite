@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU" type="text/javascript"></script>
   <link rel="stylesheet" href="./styles/style.scss">
   <!-- <link rel="stylesheet" href="/css/style.min.css"> -->
-  <!-- <link rel="stylesheet" href="/css/lightgallery.css" /> -->
+  <!-- <link rel="stylesheet" href="./blocks/lightgallery/lightgallery.scss" /> -->
   <title>ДомБаня - Типовой дом</title>
 </head>
 <body class="pageBody">
@@ -26,25 +27,19 @@
         <li class="mainNav__item mainNav__item--logo"><a href="/" class="mainNav__link"><img src="/img/logo.svg" alt="" class="logo"></a></li>
       </ul>
       <div class="social">
-        <a href="https://www.youtube.com/channel/UCoj58GpShlVhV-euDQdW_nQ" class="social__item">
-          <svg class="social__icon social__icon--yt" width="20" height="20">
-            <use href="./img/sprite.svg#icon-youtube"></use>
-          </svg>
-        </a>
-        <a href="https://www.youtube.com/channel/UCoj58GpShlVhV-euDQdW_nQ" class="social__item">
-          YouTube
-          <svg class="social__icon social__icon--yt" width="20" height="20" alt="youtube logo">
-            <use href="./img/sprite.svg#icon-youtube"></use>
+        <a href="#TODO" class="social__item">
+          <svg class="social__icon social__icon--rt" width="20" height="20">
+            <use href="./img/icons/icon-rutube.svg"></use>
           </svg>
         </a>
         <a href="#TODO" class="social__item">
-          <svg class="social__icon social__icon--fb" width="20" height="20">
-            <use href="./img/sprite.svg#icon-facebook"></use>
+          <svg class="social__icon social__icon--vk" width="20" height="20">
+            <use href="./img/icons/icon-vk.svg"></use>
           </svg>
         </a>
         <a href="#TODO" class="social__item">
-          <svg class="social__icon social__icon--insta" width="20" height="20">
-            <use href="./img/sprite.svg#icon-instagram"></use>
+          <svg class="social__icon social__icon--tg" width="20" height="20">
+            <use href="./img/icons/icon-tg.svg"></use>
           </svg>
         </a>
       </div>
@@ -195,23 +190,23 @@
       </p>
       <ul class="social pageFooter__social">
         <li class="social__item social__item--big">
-          <a href="https://www.facebook.com/kirovdt">
-            <svg class="social__icon social__icon--fb" width="40" height="40">
-              <use href="/img/sprite.svg#icon-facebook"></use>
+          <a href="#TODO">
+            <svg class="social__icon social__icon--rt" width="40" height="40">
+              <use href="./img/icons/icon-rutube.svg"></use>
             </svg>
           </a>
         </li>
         <li class="social__item social__item--big">
-          <a href="https://www.youtube.com/channel/UCoj58GpShlVhV-euDQdW_nQ">
-            <svg class="social__icon social__icon--yt" width="40" height="40">
-              <use href="/img/sprite.svg#icon-youtube"></use>
+          <a href="#TODO">
+            <svg class="social__icon social__icon--vk" width="40" height="40">
+              <use href="./img/icons/icon-vk.svg"></use>
             </svg>
           </a>
         </li>
         <li class="social__item social__item--big">
-          <a href="https://www.instagram.com/dom_banya_msk/">
-            <svg class="social__icon social__icon--insta" width="40" height="40">
-              <use href="/img/sprite.svg#icon-instagram"></use>
+          <a href="#TODO">
+            <svg class="social__icon social__icon--tg" width="40" height="40">
+              <use href="./img/icons/icon-tg.svg"></use>
             </svg>
           </a>
         </li>
@@ -219,15 +214,18 @@
     </div>
   </footer>
 
-  <script type="module" src="./js/main.js"></script>
+  <script type="module" src="./blocks/burger/burger.js"></script>
+  <!-- <script type="module" src="./blocks/lightgallery/lightgallery.js"></script> -->
+  <script type="module" src="./blocks/lightgallery/lg-thumbnail.js"></script>
 
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     lightGallery(document.getElementById('lightgallery'), {
         plugins: [lgThumbnail],
         thumbnail: true,
         licenseKey: 'your_license_key',
         speed: 500,
     });
-</script>
+</script> -->
+
 </body>
 </html>

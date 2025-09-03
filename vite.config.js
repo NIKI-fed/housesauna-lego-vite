@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import {fileURLToPath} from "url";
 import { resolve } from 'path';
 import autoprefixer from 'autoprefixer';
 import svgSpritemap from 'vite-plugin-svg-spritemap'
@@ -15,7 +16,6 @@ function replaceSvgToSprite() {
         name: 'replace-svg-to-sprite',
         apply: 'build',
         writeBundle() {
-            console.log('🔍 Searching for HTML files to process...');
             
             function processDirectory(dir) {
                 if (!fs.existsSync(dir)) return;
@@ -37,7 +37,7 @@ function replaceSvgToSprite() {
             function processHtmlFile(filePath) {
                 try {
                     const relativePath = path.relative(outDir, filePath);
-                    console.log(`📄 Processing: ${relativePath}`);
+                    // console.log(`📄 Processing: ${relativePath}`);
                     
                     let html = fs.readFileSync(filePath, 'utf8');
                     
@@ -49,9 +49,9 @@ function replaceSvgToSprite() {
                     
                     if (newHtml !== html) {
                         fs.writeFileSync(filePath, newHtml, 'utf8');
-                        console.log(`   ✅ Replaced SVG paths`);
+                        // console.log(`   ✅ Replaced SVG paths`);
                     } else {
-                        console.log(`   ℹ️ No SVG paths found to replace`);
+                        // console.log(`   ℹ️ No SVG paths found to replace`);
                     }
                 } catch (error) {
                     console.error(`   ❌ Error: ${error.message}`);
@@ -91,6 +91,49 @@ function formatSpritePlugin() {
     };
 };
 
+// Плагин для замены переменной $env на зкщвгсешщт
+function replaceEnvVariablePlugin() {
+    let originalContent = null;
+    const filePath = path.resolve(__dirname, 'src/styles/variables.scss');
+    
+    return {
+        name: 'replace-env-variable',
+        apply: 'build',
+        
+        buildStart() {
+            
+            try {
+                // Сохраняем оригинальное содержимое
+                originalContent = fs.readFileSync(filePath, 'utf8');
+                
+                // Меняем на production
+                const productionContent = originalContent.replace(
+                    "$env: 'development' !default;",
+                    "$env: 'production' !default;"
+                );
+                
+                fs.writeFileSync(filePath, productionContent, 'utf8');
+                console.log('✅ Переменная $env установлена в production');
+                
+            } catch (error) {
+                console.log('❌ Ошибка:', error.message);
+            }
+        },
+        
+        closeBundle() {
+            if (originalContent) {
+                try {
+                    // Возвращаем оригинальное содержимое
+                    fs.writeFileSync(filePath, originalContent, 'utf8');
+                    console.log('↩️ Вернули исходное значение development');
+                } catch (error) {
+                    console.log('⚠️ Не удалось вернуть исходное значение');
+                }
+            }
+        }
+    };
+}
+
 export default defineConfig({
 
     server: {
@@ -120,12 +163,15 @@ export default defineConfig({
     },
 
     resolve: {
-        alias: {
-            '@img': resolve(root, 'img')
-        }
+        alias: 
+            {
+                '@img': path.resolve(__dirname, './src/img')
+            }
     },
 
     plugins: [
+        replaceEnvVariablePlugin(),
+
         svgSpritemap({
             pattern: 'src/img/icons/*.svg', // Путь к SVG иконкам
             filename: 'img/sprite.svg', // Итоговый спрайт
@@ -135,7 +181,7 @@ export default defineConfig({
                 id: '{name}'
             }
         }),
-
+        
         formatSpritePlugin(),
         replaceSvgToSprite(),
 
@@ -169,7 +215,6 @@ export default defineConfig({
                 houses: resolve(root, 'houses.html'),
                 production: resolve(root, 'production.html'),
                 supplier: resolve(root, 'supplier.html'),
-                
                 style: resolve(root, 'styles/style.scss'),
             },
 
