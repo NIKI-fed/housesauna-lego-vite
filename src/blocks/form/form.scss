@@ -129,9 +129,9 @@
 .form__submit--dark:hover,
 .form__submit--dark:focus {
   color: $base-white;
-  background-color: $base-dark;
-  border-color: $base-dark;
-  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.5);
+  background-color: $base-blue;
+  border-color: $base-blue;
+  box-shadow: 0px 3px 8px 0px rgba(50, 50, 142, 0.5);
 }
 
 .form__submit--dark:active {

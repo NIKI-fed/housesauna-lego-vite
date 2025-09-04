@@ -10,16 +10,13 @@
         <title>Контактная форма</title>
     </head>
 
-    <body class="pageBody">
-
-
-
-      <div class="grid__element pageSection">
-        <h2 class="heading heading--h2 heading--bold heading--white">Напишите нам</h2>
+    <body class="pageSection">
+      <div class="grid__element">
+        <h2 class="heading heading--h2 heading--paddingTop-50">Напишите нам</h2>
         
         <ul class="social social__form">
           <li class="social__item social__item--form">
-            <a href="#TODO">
+            <a href="https://t.me/Dombanya1">
               <svg class="social__icon social__icon--tg" width="40" height="40">
                 <use href="./img/icons/icon-tg.svg"></use>
               </svg>
@@ -33,7 +30,7 @@
             </a>
           </li>
           <li class="social__item social__item--form">
-            <a href="#TODO">
+            <a href="https://vk.com/domizkleenogobrusa">
               <svg class="social__icon social__icon--vk" width="40" height="40">
                 <use href="./img/icons/icon-vk.svg"></use>
               </svg>
@@ -41,31 +38,30 @@
           </li>
         </ul>
 
-        <form action="/submit" class="form form--house form--column" method="POST">
+        <form action="/submit" class="form form--wide" method="POST">
           <label for="" class="form__label">
-            <input placeholder="example@example.ru" type="email" class="form__input form__input--email" required>
-            <span class="form__placeholder">Ваш email</span>
+            <input placeholder="example@example.ru" type="email" class="form__input form__input--dark form__input--email" required>
+            <span class="form__placeholder form__placeholder--dark">Ваш email</span>
           </label>
           <label for="" class="form__label">
-            <input type="text" class="form__input" required>
-            <span class="form__placeholder">Ваше имя</span>
+            <input type="text" class="form__input form__input--dark" required>
+            <span class="form__placeholder form__placeholder--dark">Ваше имя</span>
           </label>
           <label for="" class="form__label">
-            <input placeholder="(ххх) xxx-xx-xx" maxlength="15" type="tel" class="form__input form__input--phone" required>
-            <span class="form__placeholder">Ваш телефон</span>
+            <input placeholder="(ххх) xxx-xx-xx" maxlength="15" type="tel" class="form__input form__input--dark form__input--phone" required>
+            <span class="form__placeholder form__placeholder--dark">Ваш телефон</span>
           </label>
 
           <input type="hidden" name="form_name" value="запросу с общей формы сбора заявок">
           <input type="hidden" name="form_link" value="https://domizkleenogobrusa.ru">
 
-          <button class="form__submit button button--big">Позвоните мне</button>
+          <button class="form__submit form__submit--dark form__submit--wide form__submit--center button button--big">Позвоните мне</button>
         </form>
-        <p class="text text--white text--sm">Обработка заявки осущетствляется в течение рабочего дня. Отправляя заявку, Вы соглашаетесь с нашей <a href="" class="text__link text__link--alt">политикой конфиденциальности</a>.</p>
+
+        <p class="text text--black text--sm text--sm-center text--narrow">Обработка заявки осуществляется в течение рабочего дня. Отправляя заявку, Вы соглашаетесь с&nbsp;нашей <a href="" class="text__link text__link--alt" style="color: rgba(50, 50, 142, 1)">политикой конфиденциальности</a>.</p>
       </div>
 
         <script type="module" src="./blocks/form/form.js"></script>
-
-
 
     </body>
 </html>

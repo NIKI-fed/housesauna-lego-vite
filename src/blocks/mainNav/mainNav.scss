@@ -110,6 +110,7 @@
 
   @media (min-width: $width-tablet-album) {
     display: block;
+    margin-inline-start: 90px;
   }
 
   @media (min-width: $width-desktop) {

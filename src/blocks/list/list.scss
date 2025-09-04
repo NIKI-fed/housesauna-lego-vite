@@ -82,7 +82,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../../img/icons/checkmark.svg");
+
+  @if $env == 'development' {
+    background-image: url("/../../img/icons/checkmark.svg");
+  }
+  // Для продакшена
+  @else {
+    background-image: url("../../img/icons/checkmark.svg");
+  }
+
+  // background-image: url("../../img/icons/checkmark.svg");
   background-size: 40px;
   background-repeat: no-repeat;
   
