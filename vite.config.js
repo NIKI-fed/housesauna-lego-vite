@@ -185,15 +185,15 @@ export default defineConfig({
         formatSpritePlugin(),
         replaceSvgToSprite(),
 
-        // viteStaticCopy({
-        //     targets: [
-        //         {
-        //             src: 'img',
-        //             dest: '',
-        //             filter: (filePath) => !filePath.includes('icons') // Исключаем иконки
-        //         }
-        //     ],
-        // })
+        viteStaticCopy({
+            targets: [
+                {
+                    src: 'img',
+                    dest: '',
+                    filter: (filePath) => !filePath.includes('icons') // Исключаем иконки
+                }
+            ],
+        })
     ],
 
     build: {
@@ -233,7 +233,7 @@ export default defineConfig({
                 assetFileNames: ({ name, source }) => {
                     name = name?.toLowerCase() ?? '';
 
-                    if (/\.svg$/.test(name)) {
+                    if (/\.(svg|jpg|jpeg|png|webp)$/.test(name)) {
                         return 'img/[name][extname]';
                     }
 

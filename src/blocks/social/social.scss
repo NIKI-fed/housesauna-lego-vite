@@ -52,7 +52,7 @@
 
 .social__item:hover .social__icon--yt,
 .social__item:focus .social__icon--yt {
-  fill: #FF0000;
+  --yt-path1: #FF0000;
 }
 
 .social__item:hover .social__icon--fb,
@@ -134,5 +134,7 @@
   --wa-path2: #{$base-blue};
   --wa-path3: #ffffff;
   --wa-path4: #ffffff;
+
+  --yt-path1: #{$base-blue};
 
 }
