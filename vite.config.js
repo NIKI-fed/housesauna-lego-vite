@@ -185,16 +185,18 @@ export default defineConfig({
         formatSpritePlugin(),
         replaceSvgToSprite(),
 
-        viteStaticCopy({
-            targets: [
-                {
-                    src: 'img',
-                    dest: '',
-                    filter: (filePath) => !filePath.includes('icons') // Исключаем иконки
-                }
-            ],
-        })
+        // viteStaticCopy({
+        //     targets: [
+        //         {
+        //             src: 'img',
+        //             dest: '',
+        //             filter: (filePath) => !filePath.includes('icons') // Исключаем иконки
+        //         }
+        //     ],
+        // })
     ],
+
+    base: './',
 
     build: {
         outDir,

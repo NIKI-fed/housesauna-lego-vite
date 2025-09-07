@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="./styles/style.scss">
   <!-- <link rel="stylesheet" href="/css/style.min.css"> -->
   <title>ДомБаня - Главная</title>
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU" type="text/javascript"></script>
 </head>
 <body class="pageBody">
   <header class="pageHeader">
@@ -76,10 +75,10 @@
           <h1 class="promo__heading heading heading--h1 heading--uppercase heading--white">
             Дома и бани из&nbsp;клееного&nbsp;бруса
           </h1>
-          <P class="promo__text text text--white">
+          <p class="promo__text text text--white">
             Мы строим дома из клееного бруса для постояного проживания 
             и&nbsp;делаем&nbsp;это&nbsp;качественно. 
-          </P>
+          </p>
           <div class="promo__buttons">
             <a href="#TODO" class="button button--uppercase button--bold button--big">дома</a>
             <a href="#TODO" class="button button--uppercase button--bold button--big">бани</a>
@@ -374,10 +373,15 @@
     </div>
   </footer>
 
-  <!-- <script type="module" src="./js/route-panel-control.js"></script> -->
-  <script type="module" src="./blocks/burger/burger.js"></script>
-  <script type="module" src="./blocks/content-slider/content-slider.js"></script>
-  <script type="module" src="./blocks/mainNav/mainNav.js"></script>
+  <script type="module">
+    import('./blocks/mainNav/mainNav.js');
+    import('./blocks/burger/burger.js');
+    import('./blocks/content-slider/content-slider.js');
+    import('./js/route-panel-control.js');
+    import('./js/more.js');
+  </script>
+
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU" type="text/javascript"></script>
 
 </body>
 </html>

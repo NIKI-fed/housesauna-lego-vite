@@ -10,7 +10,7 @@
   }
   // Для продакшена
   @else {
-    background-image: url("@img/main-promo-house.jpg");
+    background-image: url("../../img/main-promo-house.jpg");
   }
 
   // background-image: url("../../img/main-promo-house.jpg"); // работает при билде, но не при dev
