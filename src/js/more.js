@@ -1,5 +1,5 @@
 const MORE_BTN_LAYOUT = `<div class="button button--uppercase button--bold button--big button--alt">Показать больше</div>`;
-const VIEW_COUNT = 6;
+const VIEW_COUNT = 30;
 
 const moreArticles = document.querySelectorAll(`.more`);
 
