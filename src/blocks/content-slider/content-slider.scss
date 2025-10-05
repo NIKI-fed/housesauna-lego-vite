@@ -2,7 +2,8 @@
 
 .content-slider {
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
+  overflow: visible;
   margin-block-start: $break-x-small;
   margin-block-end: $break-x-small;
 
