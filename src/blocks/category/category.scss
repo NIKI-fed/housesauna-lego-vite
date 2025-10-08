@@ -1,9 +1,5 @@
 @use "../../styles/variables.scss" as *;
 
-// .category {
-//     margin-left: 0;
-// }
-
 .category__list {
     display: flex;
     gap: 21px;
@@ -102,7 +98,6 @@
     color: $base-black;
     background-color: $base-white-alpha;
     box-shadow: 0px 3px 8px 0px rgba(255, 255, 255, 0.3);
-    // transform: translateY(-2px);
 }
 
 .category__sublist {
@@ -128,6 +123,7 @@
     padding-block: 12px;
     position: relative;
     line-height: 1;
+    cursor: pointer;
 
     @media(max-width: $width-mobile-album) {
         padding-block: 10px;
@@ -144,6 +140,8 @@
 }
 
 .category__sublist--link {
+    display: block;
+    height: 100%;
     font-family: Inter;
     color: #13133A;
     font-weight: 500;
@@ -157,6 +155,6 @@
     }
 }
 
-.category__sublist--link:hover {
+.category__sublist--item:hover .category__sublist--link {
     color: #6767CB;
 }

@@ -1,6 +1,8 @@
 const form = document.querySelector(`.form`);
 const inputs = form.querySelectorAll(`.form__input`);
 const placeholders = form.querySelectorAll(`.form__placeholder`);
+const formPhone = form.querySelector(`.form__input--phone`);
+
 
 const inputOnChange = (evt) => {
   if (evt.target.value !== ``) {
@@ -10,9 +12,21 @@ const inputOnChange = (evt) => {
   }
 };
 
+// const inputInitialValue = (evt) => {
+//   if (evt.target.value === ``) {
+//     evt.target.value = `+7`;
+//     // } else {
+//     // evt.target.nextElementSibling.classList.remove(`form__placeholder--top`);
+//   }
+//   console.log('asd')
+// };
+
 inputs.forEach((input) => {
   input.addEventListener(`input`, inputOnChange);
 });
+
+
+// formPhone.addEventListener(`focus`, inputInitialValue);
 
 // Реализация маски ввода номера телефона
 const phoneInput = document.querySelectorAll(`.form__input--phone`);

@@ -40,6 +40,10 @@
   display: block;
 }
 
+.gallery__slide:last-of-type img {
+  object-fit: contain;
+}
+
 /* Навигация */
 .gallery__nav {
   position: absolute;
