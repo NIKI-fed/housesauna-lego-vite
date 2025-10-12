@@ -244,6 +244,33 @@
   color: $base-dark;
 }
 
+.text--heigth {
+  line-height: 15px;
+  padding: 0;
+}
+
+.text_form {
+  color: #13133A;
+  line-height: 1;
+}
+
+.text_form--link {
+  color: #32328E;
+
+  &:visited {
+    color: $base-grey;
+  }
+  
+  &:hover {
+    color: $base-black;
+  }
+  
+  &:focus,
+  &:active {
+    color: $base-black;
+  }
+}
+
 .text--nopadding {
   padding: 0;
 }

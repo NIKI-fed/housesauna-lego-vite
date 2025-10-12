@@ -38,7 +38,7 @@
           </li>
         </ul>
 
-        <form action="/submit" class="form form--wide" method="POST">
+        <form action="/submit" class="form" method="POST">
           <label for="" class="form__label">
             <input placeholder="example@example.ru" type="email" class="form__input form__input--dark form__input--email" required>
             <span class="form__placeholder form__placeholder--dark">Ваш email</span>
@@ -55,10 +55,27 @@
           <input type="hidden" name="form_name" value="запросу с общей формы сбора заявок">
           <input type="hidden" name="form_link" value="https://domizkleenogobrusa.ru">
 
-          <button class="form__submit form__submit--dark form__submit--wide form__submit--center button button--big">Позвоните мне</button>
+          <div class="checkbox-container">  
+            <div style="display: flex">
+              <input type="checkbox" id="data-agreement" class="checkbox" required>  
+            </div>
+            <label for="data-agreement" class="text text--black text--sm text--narrow text--heigth">
+              
+                Я даю согласие на
+                <a href="" class="text_form--link" target="_blank">обработку персональных данных</a>
+                в&nbsp;соответствии с&nbsp;<a href="" class="text_form--link" target="_blank">политикой конфиденциальности</a>
+              
+            </label>  
+          </div>
+
+          <button class="form__button--submit">
+            Позвоните мне
+          </button>
         </form>
 
-        <p class="text text--black text--sm text--sm-center text--narrow">Обработка заявки осуществляется в течение рабочего дня. Отправляя заявку, Вы соглашаетесь с&nbsp;нашей <a href="" class="text__link text__link--alt" style="color: rgba(50, 50, 142, 1)">политикой конфиденциальности</a>.</p>
+        <p class="text text--black text--sm text--sm-center text--narrow">
+          Обработка заявки осуществляется в течение рабочего дня
+        </p>
       </div>
 
         <script type="module">

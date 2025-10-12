@@ -1,11 +1,15 @@
 @use "../../styles/variables.scss" as *;
 
 .form {
-  width: 100%;
+  width: 460px;
   display: flex;
   flex-direction: column;
   gap: $gap-2-mobile;
   align-items: flex-start;
+  
+  @media (max-width: $width-mobile-album) {
+    max-width: 290px;
+  }
 }
 
 .form--wide {
@@ -150,4 +154,39 @@
 .form__submit--center {
   margin-inline-start: auto;
   margin-inline-end: auto;
+}
+
+.form__button--submit {
+  padding: 16px;
+  background-color: #32328E;
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 15px;
+  margin: auto;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
+.form__button--submit:hover {
+  // color: #ffffff;
+  // background-color: #32328E;
+  border-color: #32328E;
+  box-shadow: 0px 3px 8px 0px rgba(50, 50, 142, 0.5);
+  transform: translateY(-2px);
+}
+
+.checkbox-container {
+  display: flex;
+  gap: 20px;
+  justify-content: start;
+}
+
+.checkbox {
+  margin: 0;
+  position: absolute;
 }
