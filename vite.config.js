@@ -217,6 +217,7 @@ export default defineConfig({
                 houses: resolve(root, 'houses.html'),
                 production: resolve(root, 'production.html'),
                 supplier: resolve(root, 'supplier.html'),
+                agreement: resolve(root, 'agreement.html'),
                 style: resolve(root, 'styles/style.scss'),
             },
 
