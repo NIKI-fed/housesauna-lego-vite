@@ -40,16 +40,16 @@
 
         <form action="/submit" class="form" method="POST">
           <label for="" class="form__label">
-            <input placeholder="example@example.ru" type="email" class="form__input form__input--dark form__input--email" required>
-            <span class="form__placeholder form__placeholder--dark">Ваш email</span>
-          </label>
-          <label for="" class="form__label">
             <input type="text" class="form__input form__input--dark" required>
             <span class="form__placeholder form__placeholder--dark">Ваше имя</span>
           </label>
           <label for="" class="form__label">
             <input placeholder="(ххх) xxx-xx-xx" maxlength="15" type="tel" class="form__input form__input--dark form__input--phone" required>
             <span class="form__placeholder form__placeholder--dark">Ваш телефон</span>
+          </label>
+          <label for="" class="form__label">
+            <input placeholder="example@example.ru" type="email" class="form__input form__input--dark form__input--email" required>
+            <span class="form__placeholder form__placeholder--dark">Ваш email (необязательно)</span>
           </label>
 
           <input type="hidden" name="form_name" value="запросу с общей формы сбора заявок">
@@ -62,8 +62,8 @@
             <label for="data-agreement" class="text text--black text--sm text--narrow text--heigth">
               
                 Я даю согласие на
-                <a href="" class="text_form--link" target="_blank">обработку персональных данных</a>
-                в&nbsp;соответствии с&nbsp;<a href="" class="text_form--link" target="_blank">политикой конфиденциальности</a>
+                <a href="/agreement/" class="text_form--link" target="_blank">обработку персональных данных</a>
+                в&nbsp;соответствии с&nbsp;<a href="/policy/" class="text_form--link" target="_blank">политикой конфиденциальности</a>
               
             </label>  
           </div>
@@ -71,15 +71,28 @@
           <button class="form__button--submit">
             Позвоните мне
           </button>
+          <p class="text text--black text--sm text--sm-center text--narrow">
+            Обработка заявки осуществляется в течение рабочего дня
+          </p>
         </form>
 
-        <p class="text text--black text--sm text--sm-center text--narrow">
-          Обработка заявки осуществляется в течение рабочего дня
-        </p>
       </div>
+
+      <article class="policy policy__close">
+        <div class="policy__container">
+          <p class="policy__text">Наш сайт использует куки. Продолжая им пользоваться, вы соглашаетесь на обработку персональных данных
+            в&nbsp;соответствии с&nbsp;
+            <a href="/policy/" class="text_form--link" target="_blank">Политикой конфиденциальности</a>
+            и 
+            <a href="/agreement/" class="text_form--link" target="_blank">Обработки персональных данных</a>
+          </p>
+          <button class="form__button--submit policy__button" aria-label="Подтверждение согласия на использование файлов Cookie">Принять</button>
+        </div>
+      </article>
 
         <script type="module">
           import('./blocks/form/form.js');
+          import('./blocks/policy/policy.js');
         </script>
 
     </body>

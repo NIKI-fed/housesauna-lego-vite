@@ -9,6 +9,7 @@
   <title>ДомБаня - Главная</title>
 </head>
 <body class="pageBody">
+
   <header class="pageHeader">
     <div class="pageHeader__logoWrapper">
       <div class="burger">
@@ -343,6 +344,7 @@
         </div>
       </article>
     </section>
+
   </main>
 
   <footer class="pageFooter">
@@ -385,15 +387,29 @@
     </div>
   </footer>
 
+  <article class="policy policy__close">
+    <div class="policy__container">
+      <p class="policy__text">Наш сайт использует куки. Продолжая им пользоваться, вы соглашаетесь на обработку персональных данных
+        в&nbsp;соответствии с&nbsp;
+        <a href="/policy/" class="text_form--link" target="_blank">Политикой конфиденциальности</a>
+        и 
+        <a href="/agreement/" class="text_form--link" target="_blank">Обработки персональных данных</a>
+      </p>
+      <button class="form__button--submit policy__button" aria-label="Подтверждение согласия на использование файлов Cookie">Принять</button>
+    </div>
+  </article>
+
   <script type="module">
     import('./blocks/mainNav/mainNav.js');
     import('./blocks/burger/burger.js');
     import('./blocks/content-slider/content-slider.js');
     import('./js/route-panel-control.js');
     import('./js/more.js');
+    import('./blocks/policy/policy.js');
   </script>
 
   <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU" type="text/javascript"></script>
+
 
 </body>
 </html>
