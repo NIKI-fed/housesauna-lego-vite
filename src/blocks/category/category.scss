@@ -1,9 +1,16 @@
 @use "../../styles/variables.scss" as *;
 
+.category {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: Inter;
+}
+
 .category__list {
     display: flex;
-    gap: 21px;
-    margin-top: 40px;
+    gap: 12px;
+    margin-block: 40px 0;
     padding-left: 0;
     list-style: none;
 
@@ -14,10 +21,10 @@
 
 .category__item {
     position: relative;
-    min-width: 115px;
+    min-width: 132px;
 
     @media (max-width: $width-mobile-album) {
-        min-width: 92px;
+        min-width: 101px;
     }
 }
 
@@ -160,4 +167,19 @@
 
 .category__sublist--item:hover .category__sublist--link {
     color: #6767CB;
+}
+
+.category__additional {
+    display: flex;
+    justify-content: center;
+}
+
+.category__item--center {
+    width: 164px;
+    text-decoration: none;
+    text-align: center;
+    
+    @media (max-width: $width-mobile-album) {
+        width: 127px;
+    }
 }
