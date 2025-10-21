@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    font-family: Inter;
+    font-family: 'Inter';
 }
 
 .category__list {
@@ -37,7 +37,7 @@
     line-height: 100%;
     border-radius: 4px;
     background-color: $base-blue;
-    font-family: Inter;
+    font-family: 'Inter';
     font-weight: 500;
     font-size: $sm-text-desktop-font;
     color: $base-white;
@@ -182,4 +182,46 @@
     @media (max-width: $width-mobile-album) {
         width: 127px;
     }
+}
+
+.category__range {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.category__range--title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 430px;
+}
+
+.category__range--input {
+    width: 78px;
+    height: 36px;
+    background-color: $base-white;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.category__range--input:active {
+    border: none;
+}
+
+.category__range--band {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    accent-color: rgba(50, 50, 142, 1);
+}
+
+.category__range--text {
+    color: $base-white;
+    margin: 0;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 77%;
 }

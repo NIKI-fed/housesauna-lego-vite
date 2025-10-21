@@ -218,6 +218,7 @@ export default defineConfig({
                 production: resolve(root, 'production.html'),
                 supplier: resolve(root, 'supplier.html'),
                 agreement: resolve(root, 'agreement.html'),
+                best: resolve(root, 'advantages.html'),
                 style: resolve(root, 'styles/style.scss'),
             },
 

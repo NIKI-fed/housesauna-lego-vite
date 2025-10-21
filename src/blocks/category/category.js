@@ -1,4 +1,4 @@
-const buttons = document.querySelectorAll('.category__button');
+const buttons = document.querySelectorAll('.category__button-arrow');
 const sublists = document.querySelectorAll('.category__sublist');
 
 // Функция закрывает все подменю и сбрасывает состояние кнопок

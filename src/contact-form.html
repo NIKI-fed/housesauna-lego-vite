@@ -39,15 +39,15 @@
         </ul>
 
         <form action="/submit" class="form" method="POST">
-          <label for="" class="form__label">
+          <label class="form__label">
             <input type="text" class="form__input form__input--dark" required>
             <span class="form__placeholder form__placeholder--dark">Ваше имя</span>
           </label>
-          <label for="" class="form__label">
+          <label class="form__label">
             <input placeholder="(ххх) xxx-xx-xx" maxlength="15" type="tel" class="form__input form__input--dark form__input--phone" required>
             <span class="form__placeholder form__placeholder--dark">Ваш телефон</span>
           </label>
-          <label for="" class="form__label">
+          <label class="form__label">
             <input placeholder="example@example.ru" type="email" class="form__input form__input--dark form__input--email" required>
             <span class="form__placeholder form__placeholder--dark">Ваш email (необязательно)</span>
           </label>
@@ -55,17 +55,18 @@
           <input type="hidden" name="form_name" value="запросу с общей формы сбора заявок">
           <input type="hidden" name="form_link" value="https://domizkleenogobrusa.ru">
 
-          <div class="checkbox-container">  
-            <div style="display: flex">
-              <input type="checkbox" id="data-agreement" class="checkbox" required>  
-            </div>
-            <label for="data-agreement" class="text text--black text--sm text--narrow text--heigth">
-              
-                Я даю согласие на
-                <a href="/agreement/" class="text_form--link" target="_blank">обработку персональных данных</a>
-                в&nbsp;соответствии с&nbsp;<a href="/policy/" class="text_form--link" target="_blank">политикой конфиденциальности</a>
-              
-            </label>  
+          <div class="form__checkbox">
+            <label class="form__checkbox--label">
+              <input type="checkbox" id="data-agreement" class="form__checkbox--input" required>
+              <span class="form__checkbox--custom"></span>
+              <span for="data-agreement" class="text text--black text--sm text--narrow text--heigth">
+                
+                  Я даю согласие на
+                  <a href="/agreement/" class="text_form--link" target="_blank">обработку персональных данных</a>
+                  в&nbsp;соответствии с&nbsp;<a href="/policy/" class="text_form--link" target="_blank">политикой конфиденциальности</a>
+                
+              </span>  
+            </label>
           </div>
 
           <button class="form__button--submit">

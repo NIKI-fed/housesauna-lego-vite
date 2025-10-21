@@ -4,7 +4,7 @@
   width: 460px;
   display: flex;
   flex-direction: column;
-  gap: $gap-2-mobile;
+  gap: 20px;
   align-items: flex-start;
   
   @media (max-width: $width-mobile-album) {
@@ -177,14 +177,47 @@
   transform: translateY(-2px);
 }
 
-.checkbox-container {
+.form__checkbox--label {
   display: flex;
-  gap: 20px;
-  justify-content: start;
-  margin-block: 4px;
+  gap: 11px;
+  cursor: pointer;
 }
 
-.checkbox {
-  margin: 0;
+.form__checkbox--input {
   position: absolute;
+  top: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
+
+.form__checkbox--custom {
+  display: block;
+  width: 16px;
+  min-width: 18px;
+  height: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  @if $env == 'development' {
+    background-image: url("/../../img/icons/check-off.svg");
+    }
+    // Для продакшена
+    @else {
+      background-image: url("../../img/icons/check-off.svg");
+    }
+}
+
+.form__checkbox--input:checked + .form__checkbox--custom {
+  border: none;
+
+  @if $env == 'development' {
+  background-image: url("/../../img/icons/check-on.svg");
+  }
+  // Для продакшена
+  @else {
+    background-image: url("../../img/icons/check-on.svg");
+  }
+}
+
+

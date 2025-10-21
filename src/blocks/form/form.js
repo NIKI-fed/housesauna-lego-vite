@@ -12,21 +12,26 @@ const inputOnChange = (evt) => {
   }
 };
 
-// const inputInitialValue = (evt) => {
-//   if (evt.target.value === ``) {
-//     evt.target.value = `+7`;
-//     // } else {
-//     // evt.target.nextElementSibling.classList.remove(`form__placeholder--top`);
-//   }
-//   console.log('asd')
-// };
-
 inputs.forEach((input) => {
   input.addEventListener(`input`, inputOnChange);
 });
 
+// Добавляем +7 при фокусе если поле пустое
+const inputPhoneFocus = (evt) => {
+  if (evt.target.value === ``) {
+    evt.target.value = `+7`;
+    console.log(evt.target)
+    evt.target.dataset.placeholder = 'XXX) XXX-XX-XX';
+  }
+};
 
-// formPhone.addEventListener(`focus`, inputInitialValue);
+// Убираем +7 при потере фокуса если только +7
+const inputPhoneBlur = (evt) => {
+  if (evt.target.value === `+7`) {
+    evt.target.value = ``;
+  }
+};
+
 
 // Реализация маски ввода номера телефона
 const phoneInput = document.querySelectorAll(`.form__input--phone`);
@@ -44,6 +49,8 @@ const inputPhoneChange = (evt) => {
   };
 };
 
-phoneInput.forEach((input) => {
-  input.addEventListener(`input`, inputPhoneChange);
+phoneInput.forEach((phoneInput) => {
+  phoneInput.addEventListener(`input`, inputPhoneChange);
+  // phoneInput.addEventListener(`focus`, inputPhoneFocus);
+  // phoneInput.addEventListener(`blur`, inputPhoneBlur);
 });
