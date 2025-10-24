@@ -108,26 +108,62 @@
                     </li>
                   </ul>
                 </li>
-
               </ul>
+
               <div class="category__additional">
                 <a href="TODO" class="category__button category__item--center">С террасой</a>
               </div>
             </div>
 
-            <!-- <div class="category__range">
+            <div class="category__range">
+
               <div class="category__range--title">
-                <label class="category__range--label">
-                  <input id="min_square" value="20" minlength="2" maxlength="3" class="category__range--input" required>
+                <label for="input__min--square" class="category__range--label">
+                  <input
+                    id="input__min--square" 
+                    value=""
+                    min="" 
+                    max="" 
+                    class="category__range--input"
+                  >
                 </label>
+
                 <p class="category__range--text">Площадь, м<sup>2</sup></p>
-                <label class="category__form--label">
-                  <input id="max_square" value="100" minlength="2" maxlength="3" class="category__range--input" required>
+
+                <label for="input__max--square" class="category__form--label">
+                  <input 
+                    id="input__max--square" 
+                    value="" 
+                    min="" 
+                    max="" 
+                    class="category__range--input"
+                  >
                 </label>
               </div>
               
-              <input type="range" class="category__range--band" id="range_square" min="50" max="300" step="10">
-            </div> -->
+              <div class="track__container">
+                <div class="track__container--custom"></div>
+                <input 
+                  id="track__min--point" 
+                  type="range" 
+                  class="custom__point" 
+                  min="" 
+                  max="" 
+                  value=""
+                  step="10"
+                >
+                <input 
+                  id="track__max--point" 
+                  type="range" 
+                  class="custom__point" 
+                  min="" 
+                  max="" 
+                  value="" 
+                  step="10"
+                >
+              </div>
+              
+            </div>
           
           </div>
         </article>
@@ -480,7 +516,7 @@
     import('./blocks/mainNav/mainNav.js');
     import('./blocks/burger/burger.js');
     import('./blocks/category/category.js');
-    // import('./blocks/content-slider/content-slider.js');
+    import('./blocks/range/range.js');
     import('./js/route-panel-control.js');
     import('./js/more.js');
   </script>
