@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 430px;
+    width: 400px;
 
     @media (max-width: $width-mobile-album) {
         width: 330px;
@@ -33,7 +33,7 @@
 .category__range--text {
     color: $base-white;
     margin: 0;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 77%;

@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
 }
 
 .category__list {
@@ -13,6 +13,7 @@
     margin-block: 40px 0;
     padding-left: 0;
     list-style: none;
+    z-index: 4;
 
     @media (max-width: $width-mobile-album) {
         gap: 8px;
@@ -21,7 +22,8 @@
 
 .category__item {
     position: relative;
-    min-width: 132px;
+    min-width: 130px;
+    max-width: 146px;
 
     @media (max-width: $width-mobile-album) {
         min-width: 101px;
@@ -30,14 +32,14 @@
 
 .category__button {
     display: block;
-    padding-inline-start: 12px;
+    padding-inline-start: 8px;
     padding-inline-end: 27px;
     width: 100%;
     padding-block: 14px;
     line-height: 100%;
     border-radius: 4px;
     background-color: $base-blue;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: $sm-text-desktop-font;
     color: $base-white;
@@ -152,7 +154,7 @@
 .category__sublist--link {
     display: block;
     height: 100%;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     color: $base-dark;
     font-weight: 500;
     font-size: 16px;
@@ -175,7 +177,7 @@
 }
 
 .category__item--center {
-    width: 164px;
+    width: 148px;
     text-decoration: none;
     text-align: center;
     
