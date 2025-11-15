@@ -219,6 +219,7 @@ export default defineConfig({
                 supplier: resolve(root, 'supplier.html'),
                 agreement: resolve(root, 'agreement.html'),
                 best: resolve(root, 'advantages.html'),
+                policy: resolve(root, 'policy.html'),
                 style: resolve(root, 'styles/style.scss'),
             },
 

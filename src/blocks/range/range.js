@@ -9,7 +9,7 @@ const trackContainer = document.querySelector(".track__container");
 const minValue = parseFloat(rangeMin.min);
 const maxValue = parseFloat(rangeMax.max);
 
-const listContainer = document.querySelector("#houses_list");
+const listContainer = document.getElementById("listContainer");
 
 const gap = 1;
 
